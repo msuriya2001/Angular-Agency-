@@ -4,7 +4,7 @@
     "width": 2000,
     "height": 2000,
     "scrollTop": 0,
-    "scrollLeft": -117,
+    "scrollLeft": -660,
     "zoomLevel": 1,
     "show": {
       "tableComment": true,
@@ -568,7 +568,7 @@
           "active": false,
           "left": 590,
           "top": 371,
-          "zIndex": 1,
+          "zIndex": 6,
           "widthName": 81.30009460449219,
           "widthComment": 120
         },
