@@ -8,7 +8,13 @@
         </div>
 
 
+        <form [formGroup]="registerForm" (ngSubmit)="OnRegistrationSubmit()">
+
+
         <table class="table-fixed">
+            <tbody>
+
+                
             <tr>
                 <td class="p-4">
                     <label class="my-auto text-xl text-gray-900 dark:text-white">Store Name</label>
@@ -18,7 +24,7 @@
 
                 <td class="p-4">
 
-                    <input type="text">
+                    <input type="text" formControlName="StoreName">
                 </td>
             </tr>
 
@@ -31,7 +37,7 @@
 
                 <td class="p-4">
 
-                    <input type="text">
+                    <input type="text" formControlName="FirstName">
                 </td>
 
             </tr>
@@ -44,7 +50,7 @@
 
                 <td class="p-4">
 
-                    <input type="text">
+                    <input type="text" formControlName="LastName">
                 </td>
 
             </tr>
@@ -59,7 +65,7 @@
 
                 <td class="p-4">
 
-                    <input type="text">
+                    <input type="text" formControlName="Mobile">
                 </td>
 
             </tr>
@@ -72,7 +78,7 @@
 
                 <td class="p-4">
 
-                    <input type="text">
+                    <input type="text" formControlName="Email">
                 </td>
 
             </tr>
@@ -85,7 +91,7 @@
 
                 <td class="p-4">
 
-                    <input type="password">
+                    <input type="password" formControlName="Password">
                 </td>
 
             </tr>
@@ -98,24 +104,25 @@
 
                 <td class="p-4">
 
-                    <input type="password">
+                    <input type="password" formContolName="ReTypePassword">
                 </td>
 
             </tr>
 
-
-
-
-           
-
+        </tbody>
 
 
         </table>
 
+  
+
+
         <div class="w-1/3">
-            <button class=" w-full rounded-2xl bg-rose-400">Submit</button>
+            <input type="submit" class=" w-full rounded-2xl bg-rose-400" value="submit">
 
         </div>
+
+    </form>
     
 
 
