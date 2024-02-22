@@ -24,8 +24,9 @@
 
                 <td class="p-4">
 
-                    <input type="text" formControlName="StoreName">
-                </td>
+                    <input type="text"  formControlName="StoreName">
+                    <small style="color: red;" *ngIf="registerForm['controls']['StoreName']['errors']?.['required']&& registerForm['controls']['StoreName']['touched']">**Store Name is a required field</small>
+
             </tr>
 
             <tr>
@@ -38,6 +39,11 @@
                 <td class="p-4">
 
                     <input type="text" formControlName="FirstName">
+                    <small style="color: red;" *ngIf="registerForm['controls']['FirstName']['errors']?.['required'] &&  registerForm['controls']['FirstName']['touched']">**First Name is a required field</small>
+
+                    <small style="color: red;" *ngIf="registerForm['controls']['FirstName']['errors']?.['NoSpaceAllowed'] &&  registerForm['controls']['FirstName']['touched']">**Space is not allowed</small>
+
+
                 </td>
 
             </tr>
@@ -51,6 +57,8 @@
                 <td class="p-4">
 
                     <input type="text" formControlName="LastName">
+                    <small style="color: red;" *ngIf="registerForm['controls']['LastName']['errors']?.['required'] &&  registerForm['controls']['LastName']['touched']">**Last Name is a required field</small>
+
                 </td>
 
             </tr>
@@ -66,6 +74,8 @@
                 <td class="p-4">
 
                     <input type="text" formControlName="Mobile">
+                    <small style="color: red;" *ngIf="registerForm['controls']['Mobile']['errors']?.['required'] &&  registerForm['controls']['Mobile']['touched']">**Mobile Number is a required field</small>
+
                 </td>
 
             </tr>
@@ -79,6 +89,10 @@
                 <td class="p-4">
 
                     <input type="text" formControlName="Email">
+                    <small style="color: red;" *ngIf="registerForm['controls']['Email']['errors']?.['required'] &&  registerForm['controls']['Email']['touched']">**Email ID is a required field</small>
+                    <small style="color: red;" *ngIf="registerForm['controls']['Email']['errors']?.['email'] &&  registerForm['controls']['Email']['touched']">**Email ID is not a valid email</small>
+
+
                 </td>
 
             </tr>
@@ -92,6 +106,8 @@
                 <td class="p-4">
 
                     <input type="password" formControlName="Password">
+                    <small style="color: red;" *ngIf="registerForm['controls']['Password']['errors']?.['required'] &&  registerForm['controls']['Password']['touched']">**Password is a required field</small>
+
                 </td>
 
             </tr>
@@ -105,6 +121,8 @@
                 <td class="p-4">
 
                     <input type="password" formContolName="ReTypePassword">
+                    <small style="color:  red;" *ngIf="registerForm['controls']['ReTypePassword']['errors']?.['required'] &&  registerForm['controls']['ReTypePassword']['touched']">**Enter your password again</small>
+
                 </td>
 
             </tr>
