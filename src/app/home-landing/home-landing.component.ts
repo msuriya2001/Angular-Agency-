@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-landing',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './home-landing.component.css'
 })
 export class HomeLandingComponent {
+
 
 }

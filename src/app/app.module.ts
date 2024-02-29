@@ -7,13 +7,15 @@ import { LoginComponent } from './login/login.component';
 import { SignUPComponent } from './sign-up/sign-up.component';
 import { HomeLandingComponent } from './home-landing/home-landing.component';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+import { AddingProductsComponent } from './adding-products/adding-products.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignUPComponent,
-    HomeLandingComponent
+    HomeLandingComponent,
+    AddingProductsComponent
   ],
   imports: [
     BrowserModule,
