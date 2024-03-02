@@ -1,4 +1,4 @@
-<body class="bg-sky-950">
+<div class="bg-sky-950">
 
     
     <div class="sticky w-full h- flex  justify-between bg-slate-950 opacity-30 drop-shadow-xl" >  
@@ -21,12 +21,20 @@
     </div>
 
 
+    
 
-
-    <section class="rounded-2xl h-screen w-3/4 flex flex-col mx-auto  bg-cyan-900 opacity-70">
+    <div class="rounded-2xl h-screen w-3/4 flex flex-col mx-auto  bg-cyan-900 opacity-70">
 
        
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+
+
+            <!-- Add a click event to get the data in formsGroup -->
+           
+
+
+
+            <form [formGroup]="addProductsForm"> 
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
@@ -49,42 +57,87 @@
                     </tr>
                 </thead>
 
-                <tbody>
-                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                
+                <tbody formArrayName="productsArray" *ngFor="let product of this.addProductsForm['controls']['productsArray']['controls']; let i = index"  >
+
+                 
+
+
+                    
+                    
+         
+
+                     
+
+                            
+
+                                 
+                                <tr [formGroupName] = "i" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                         
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Name of the product">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <input type="text" formControlName="Name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Name of the product">
 
-                        </th>
-                        <td class="px-6 py-4">
-                            <input type="number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Price of the product">
+                                    </th>
+                                    <td class="px-6 py-4">
+                                        <input type="number" formControlName="Price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Price of the product">
 
-                        </td>
-                        <td class="px-6 py-4">
-                            <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Category of the product">
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <input type="text" formControlName="Category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Category of the product">
 
-                        </td>
-                        <td class="px-6 py-4">
-                            <input type="number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Available stock">
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <input type="number" formControlName="Available" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Available stock">
 
-                        </td>
+                                    </td>
                         
                        
-                        <td class="flex items-center px-6 py-4">
-                            <button  class=" p-3 h-full rounded-2xl bg-gray-600 m-4 font-medium text-green-600 dark:text-green-500 hover:bg-green-700 text-white">Add</button>
-                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                            <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline ms-3">Remove</a>
-                        </td>
-                    </tr>
+                                    <td class="flex items-center px-6 py-4">
+                                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                        <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline ms-3">Remove</a>
+                                    </td>
+                                </tr>
+
+
+                    
+
+
+                   
+                 
+                 
+                         
+
+                </tbody>
+
+            
 
             </table>
+        </form>
+
+        <div class="w-full h-200px">
+
+            <button  class=" p-3 h-50px rounded-2xl bg-gray-600 m-4 font-medium text-blue-600 dark:text-green-500 hover:bg-blue-700 text-white" (click)="SubmitForm()">Submit</button>
+
+            <button  class=" p-3 h-50px rounded-2xl bg-gray-600 m-4 font-medium text-green-600 dark:text-green-500 hover:bg-green-700 text-white" (click)="AddNewProduct()">Add Product</button>
+
+
+        </div>
+
+
+      
+      
+           
+
+
+            
         </div>
 
 
    
 
-    </section>
+    </div>
+
     
-</body>
+</div>
 
 
