@@ -25,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Futher read
+
+this is a personal project that help large scale Agency distributors to organise, bill, and track their product sales. This wep page also uses ML models to make the client
+understand the flow of products, sales and other required stats.
+
+
