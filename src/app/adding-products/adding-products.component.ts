@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms'; 
 import { FormGroup } from '@angular/forms';
 import { FormArray } from '@angular/forms';
+import { Validators } from '@angular/forms';
+import { validateHeaderName } from 'http';
 
 @Component({
   selector: 'app-adding-products',
@@ -22,10 +24,10 @@ export class AddingProductsComponent implements OnInit{
 
       new FormGroup({
 
-        Name:new FormControl(null), 
-        Price:new FormControl(null),
-        Category:new FormControl(null), 
-        Available:new FormControl(null)
+        Name:new FormControl(null,[Validators.required]), 
+        Price:new FormControl(null, [Validators.required, Validators.pattern("^[0-9]*$")]),
+        Category:new FormControl(null, [Validators.required]), 
+        Available:new FormControl(null, [Validators.required, Validators.pattern("^[0-9]*$")])
 
       })
 
@@ -42,18 +44,28 @@ export class AddingProductsComponent implements OnInit{
 
   AddNewProduct(){
 
-    const newProduct = new FormGroup({
+    if(!this.addProductsForm.valid){
+      alert("Please check the following once !\n Price and Available column should be Number")
 
-      Name:new FormControl(null), 
-      Price:new FormControl(null),
-      Category:new FormControl(null), 
-      Available:new FormControl(null)
+    }
 
-    });
+    else{
+      const newProduct = new FormGroup({
 
+        Name:new FormControl(null,[Validators.required]), 
+        Price:new FormControl(null, [Validators.required, Validators.pattern("^[0-9]*$")]),
+        Category:new FormControl(null, [Validators.required]), 
+        Available:new FormControl(null, [Validators.required, Validators.pattern("^[0-9]*$")])
+  
+      });
+  
+  
+  
+      (<FormArray>this.addProductsForm.get('productsArray')).push(newProduct);
 
+    }
 
-    (<FormArray>this.addProductsForm.get('productsArray')).push(newProduct);
+ 
 
 
 
@@ -64,8 +76,20 @@ export class AddingProductsComponent implements OnInit{
   SubmitForm(){
 
 
+    if(!this.addProductsForm.valid){
+      alert("Please check the following once !\n Price and Available column should be Number")
+
+    }
+    else{
+
+      console.log(this.addProductsForm['controls']['productsArray']['controls']);
+
+    }
+
     
   }
+
+
 
 
 }
