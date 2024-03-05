@@ -1,3 +1,4 @@
+
 <div class="bg-sky-950">
 
     
@@ -19,22 +20,52 @@
         
 
     </div>
+    <div class=" h-screen w-3/4 flex flex-col mx-auto  bg-cyan-900 opacity-70">
+
+        <div class="flex flex-col place-items-center">
+
+            <h3 class="mb-2 text-7xl font-bold tracking-tight text-gray-900 dark:text-white">Billing</h3>
+        
+
+        </div>
+
+        <div class="flex flex-row justify-between border-2 border-cyan-900 border-b-cyan-300 ">
+            
+                <div class="relative ml-20 mb-6">
+                   
+                        <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-2xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Store Name">
+                </div>
+
+                <div class="mr-40">
+                    <section>
+
+                        <h3 class="mb-2 text-1xl font-bold tracking-tight text-gray-900 dark:text-white">Date</h3>
+                        <label>This display date</label>
+
+                    </section>
+                    <section>
+
+                        <h3 class="mb-2 text-1xl font-bold tracking-tight text-gray-900 dark:text-white">GST In</h3>
+                        <label>This display GST Number</label>
+
+                    </section>
 
 
-    
-
-    <div class="rounded-2xl h-screen w-3/4 flex flex-col mx-auto  bg-cyan-900 opacity-70">
-
-       
-        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
 
 
-            <!-- Add a click event to get the data in formsGroup -->
+                </div>
+
+      
+
+            
            
+           
+        </div>
 
 
 
-            <form [formGroup]="addProductsForm"> 
+
+        <form class="mt-10" [formGroup]="addProductsForm"> 
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
@@ -42,14 +73,14 @@
                             Product name
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Price
+                            Quantity
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Category
+                            Available
                         </th>
                         
                         <th scope="col" class="px-6 py-3">
-                            Available
+                            Price
                         </th>                       
                         <th scope="col" class="px-6 py-3">
                             Action
@@ -79,15 +110,17 @@
 
                                     </th>
                                     <td class="px-6 py-4">
-                                        <input type="number" formControlName="Price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Price of the product">
+                                        <input type="number" formControlName="Quantity" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Quantity">
                                         <small></small>
                                     </td>
                                     <td class="px-6 py-4">
-                                        <input type="text" formControlName="Category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Category of the product">
+                                        <!-- <input type="text" formControlName="Available" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Available"> -->
+                                        <label type=""  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">Available</label>
 
                                     </td>
                                     <td class="px-6 py-4">
-                                        <input type="number" formControlName="Available" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Available stock">
+                                        <!-- <input type="number"  formControlName="Price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Price"> -->
+                                        <label type=""  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">Price</label>
 
                                     </td>
                         
@@ -116,7 +149,7 @@
 
         <div class="w-full h-200px">
 
-            <button class=" p-3 h-50px rounded-2xl bg-gray-600 m-4 font-medium text-blue-600 dark:text-green-500 hover:bg-blue-700 text-white" (click)="SubmitForm()">Submit</button>
+            <button class=" p-3 h-50px rounded-2xl bg-gray-600 m-4 font-medium text-blue-600 dark:text-green-500 hover:bg-blue-700 text-white" (click)="SubmitForm()">Bill</button>
 
             <button class=" p-3 h-50px rounded-2xl bg-gray-600 m-4 font-medium text-green-600 dark:text-green-500 hover:bg-green-700 text-white" (click)="AddNewProduct()">Add Product</button>
 
@@ -124,20 +157,14 @@
         </div>
 
 
-      
-      
-        
 
 
             
-        </div>
-
-
    
-
+        
     </div>
+ 
 
-    
+
 </div>
-
 

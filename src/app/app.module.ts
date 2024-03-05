@@ -8,6 +8,7 @@ import { SignUPComponent } from './sign-up/sign-up.component';
 import { HomeLandingComponent } from './home-landing/home-landing.component';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { AddingProductsComponent } from './adding-products/adding-products.component';
+import { BillComponent } from './bill/bill.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { AddingProductsComponent } from './adding-products/adding-products.compo
     LoginComponent,
     SignUPComponent,
     HomeLandingComponent,
-    AddingProductsComponent
+    AddingProductsComponent,
+    BillComponent
   ],
   imports: [
     BrowserModule,

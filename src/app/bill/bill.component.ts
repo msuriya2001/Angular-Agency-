@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms'; 
 import { FormGroup } from '@angular/forms';
-import { FormArray } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
-import { validateHeaderName } from 'http';
-
+import { FormArray } from '@angular/forms';
 @Component({
-  selector: 'app-adding-products',
-  templateUrl: './adding-products.component.html',
-  styleUrl: './adding-products.component.css'
+  selector: 'app-bill',
+  templateUrl: './bill.component.html',
+  styleUrl: './bill.component.css'
 })
-export class AddingProductsComponent implements OnInit{
+export class BillComponent implements OnInit {
+
+
 
   addProductsForm: FormGroup;
 
@@ -25,9 +25,9 @@ export class AddingProductsComponent implements OnInit{
       new FormGroup({
 
         Name:new FormControl(null,[Validators.required]), 
-        Price:new FormControl(null, [Validators.required, Validators.pattern("^[0-9]*$")]),
-        Category:new FormControl(null, [Validators.required]), 
-        Available:new FormControl(null, [Validators.required, Validators.pattern("^[0-9]*$")])
+        Quantity:new FormControl(null, [Validators.required, Validators.pattern("^[0-9]*$")]),
+        // Available:new FormControl(null, [Validators.required , Validators.pattern("^[0-9]*$")]), 
+        // Price:new FormControl(null, [Validators.required, Validators.pattern("^[0-9]*$")])
 
       })
 
@@ -53,9 +53,10 @@ export class AddingProductsComponent implements OnInit{
       const newProduct = new FormGroup({
 
         Name:new FormControl(null,[Validators.required]), 
-        Price:new FormControl(null, [Validators.required, Validators.pattern("^[0-9]*$")]),
-        Category:new FormControl(null, [Validators.required]), 
-        Available:new FormControl(null, [Validators.required, Validators.pattern("^[0-9]*$")])
+        Quantity:new FormControl(null, [Validators.required, Validators.pattern("^[0-9]*$")]),
+        // Available:new FormControl(null, [Validators.required , Validators.pattern("^[0-9]*$")]), 
+        // Price:new FormControl(null, [Validators.required, Validators.pattern("^[0-9]*$")])
+
   
       });
   
@@ -88,8 +89,6 @@ export class AddingProductsComponent implements OnInit{
 
     
   }
-
-
 
 
 }
