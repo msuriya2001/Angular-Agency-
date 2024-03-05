@@ -20,7 +20,7 @@
         
 
     </div>
-    <div class="h-screen w-3/4 flex flex-col mx-auto  bg-cyan-900 opacity-70">
+    <div class=" h-screen w-3/4 flex flex-col mx-auto  bg-cyan-900 opacity-70">
 
         <div class="flex flex-col place-items-center">
 
@@ -29,9 +29,136 @@
 
         </div>
 
-        <div class="flex flex-row">
-            <input type="text" name="" id="">
+        <div class="flex flex-row justify-between border-2 border-cyan-900 border-b-cyan-300 ">
+            
+                <div class="relative ml-20 mb-6">
+                   
+                        <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-2xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Store Name">
+                </div>
+
+                <div class="mr-40">
+                    <section>
+
+                        <h3 class="mb-2 text-1xl font-bold tracking-tight text-gray-900 dark:text-white">Date</h3>
+                        <label>This display date</label>
+
+                    </section>
+                    <section>
+
+                        <h3 class="mb-2 text-1xl font-bold tracking-tight text-gray-900 dark:text-white">GST In</h3>
+                        <label>This display GST Number</label>
+
+                    </section>
+
+
+
+
+                </div>
+
+      
+
+            
+           
+           
         </div>
+
+
+
+
+        <form class="mt-10" [formGroup]="addProductsForm"> 
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <tr>
+                        <th scope="col" class="px-6 py-3">
+                            Product name
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Quantity
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Available
+                        </th>
+                        
+                        <th scope="col" class="px-6 py-3">
+                            Price
+                        </th>                       
+                        <th scope="col" class="px-6 py-3">
+                            Action
+                        </th>
+                    </tr>
+                </thead>
+
+                
+                <tbody formArrayName="productsArray" *ngFor="let product of this.addProductsForm['controls']['productsArray']['controls']; let i = index"  >
+
+                 
+
+
+                    
+                    
+         
+
+                     
+
+                            
+
+                                 
+                                <tr [formGroupName] = "i" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <input type="text" formControlName="Name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Name of the product">
+
+                                    </th>
+                                    <td class="px-6 py-4">
+                                        <input type="number" formControlName="Quantity" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Quantity">
+                                        <small></small>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <!-- <input type="text" formControlName="Available" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Available"> -->
+                                        <label type=""  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">Available</label>
+
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <!-- <input type="number"  formControlName="Price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Price"> -->
+                                        <label type=""  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">Price</label>
+
+                                    </td>
+                        
+                       
+                                    <td class="flex items-center px-6 py-4">
+                                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                        <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline ms-3">Remove</a>
+                                    </td>
+                                </tr>
+
+
+                    
+
+
+                   
+                 
+                 
+                         
+
+                </tbody>
+
+            
+
+            </table>
+        </form>
+
+        <div class="w-full h-200px">
+
+            <button class=" p-3 h-50px rounded-2xl bg-gray-600 m-4 font-medium text-blue-600 dark:text-green-500 hover:bg-blue-700 text-white" (click)="SubmitForm()">Bill</button>
+
+            <button class=" p-3 h-50px rounded-2xl bg-gray-600 m-4 font-medium text-green-600 dark:text-green-500 hover:bg-green-700 text-white" (click)="AddNewProduct()">Add Product</button>
+
+
+        </div>
+
+
+
+
             
    
         
