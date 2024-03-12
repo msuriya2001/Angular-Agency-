@@ -279,10 +279,10 @@
           }
         ],
         "ui": {
-          "active": false,
-          "left": 232,
-          "top": 59,
-          "zIndex": 4,
+          "active": true,
+          "left": 263,
+          "top": 92,
+          "zIndex": 6,
           "widthName": 80.39007568359375,
           "widthComment": 94.43008422851562,
           "color": "#FF00FF"
@@ -785,8 +785,8 @@
           "columnIds": [
             "de0380e2-5e3a-47a7-8bde-9dc84b6cec10"
           ],
-          "x": 600.2931365966797,
-          "y": 196,
+          "x": 631.2931365966797,
+          "y": 229,
           "direction": "right"
         },
         "end": {
@@ -811,8 +811,8 @@
           "columnIds": [
             "de0380e2-5e3a-47a7-8bde-9dc84b6cec10"
           ],
-          "x": 416.14656829833984,
-          "y": 333,
+          "x": 447.14656829833984,
+          "y": 366,
           "direction": "bottom"
         },
         "end": {
