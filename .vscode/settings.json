@@ -9,8 +9,8 @@
             "server": "localhost",
             "port": 3306,
             "driver": "MySQL",
-            "name": "TestCon",
-            "database": "testDb",
+            "name": "Agency_project_1",
+            "database": "Agency_1",
             "username": "root",
             "askForPassword": true
         }
