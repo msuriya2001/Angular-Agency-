@@ -3,9 +3,9 @@
     "version": "2.2.13",
     "width": 2000,
     "height": 2000,
-    "scrollTop": 0,
-    "scrollLeft": -165.83333333333337,
-    "zoomLevel": 0.8,
+    "scrollTop": -310.93069999999994,
+    "scrollLeft": -98,
+    "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -19,7 +19,7 @@
     },
     "database": "MySQL",
     "databaseName": "Agency",
-    "canvasType": "ERD",
+    "canvasType": "@vuerd/builtin-generator-code",
     "language": "GraphQL",
     "tableCase": "pascalCase",
     "columnCase": "camelCase",
@@ -280,9 +280,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 263,
-          "top": 92,
-          "zIndex": 17,
+          "left": 48.5577,
+          "top": 131.9994,
+          "zIndex": 6,
           "widthName": 120.5731201171875,
           "widthComment": 94.43008422851562,
           "color": "#FF00FF"
@@ -566,9 +566,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 753,
-          "top": 364,
-          "zIndex": 21,
+          "left": 1295.5,
+          "top": 371.5,
+          "zIndex": 3,
           "widthName": 81.30009460449219,
           "widthComment": 120
         },
@@ -697,9 +697,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 899.2777,
-          "top": 811.9165,
-          "zIndex": 6,
+          "left": 1414.2777,
+          "top": 751.9165,
+          "zIndex": 4,
           "widthName": 60,
           "widthComment": 60
         },
@@ -710,6 +710,29 @@
         "name": "Products_store",
         "comment": "Not_visble-for_stat_purpose",
         "columns": [
+          {
+            "id": "aa396ef8-5e96-4c97-9ef4-5762171d9deb",
+            "name": "Product_id",
+            "comment": "Composite key",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 66.92207336425781,
+              "widthComment": 91.72607421875,
+              "widthDataType": 60,
+              "widthDefault": 60
+            }
+          },
           {
             "id": "01cc4827-08d8-4ba2-8986-0b712aca8af2",
             "name": "Product ID ",
@@ -752,29 +775,6 @@
               "pfk": false,
               "widthName": 60,
               "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            }
-          },
-          {
-            "id": "aa396ef8-5e96-4c97-9ef4-5762171d9deb",
-            "name": "Product_id",
-            "comment": "Composite key",
-            "dataType": "INT",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": true,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": true,
-              "fk": false,
-              "pfk": false,
-              "widthName": 66.92207336425781,
-              "widthComment": 91.72607421875,
               "widthDataType": 60,
               "widthDefault": 60
             }
@@ -828,9 +828,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 67,
-          "top": 811.5,
-          "zIndex": 16,
+          "left": 164.5,
+          "top": 751.5,
+          "zIndex": 7,
           "widthName": 93.02609252929688,
           "widthComment": 120
         },
@@ -854,8 +854,8 @@
           "columnIds": [
             "de0380e2-5e3a-47a7-8bde-9dc84b6cec10"
           ],
-          "x": 631.2931365966797,
-          "y": 160.5,
+          "x": 416.8508365966797,
+          "y": 177.66606666666667,
           "direction": "right"
         },
         "end": {
@@ -880,17 +880,17 @@
           "columnIds": [
             "de0380e2-5e3a-47a7-8bde-9dc84b6cec10"
           ],
-          "x": 447.14656829833984,
-          "y": 366,
-          "direction": "bottom"
+          "x": 416.8508365966797,
+          "y": 360.3327333333333,
+          "direction": "right"
         },
         "end": {
           "tableId": "da7f0554-196d-4fce-889b-81205b8f34fd",
           "columnIds": [
             "ffac7aa2-0540-4290-9c8d-c023a7a684f4"
           ],
-          "x": 899.2777,
-          "y": 854.7915,
+          "x": 1414.2777,
+          "y": 794.7915,
           "direction": "left"
         },
         "constraintName": "fk_agency main_to_billing",
@@ -906,8 +906,8 @@
           "columnIds": [
             "23ee35a3-3b46-4bd6-a3b7-e2098ed84679"
           ],
-          "x": 899.2777,
-          "y": 940.5415,
+          "x": 1414.2777,
+          "y": 880.5415,
           "direction": "left"
         },
         "end": {
@@ -915,8 +915,8 @@
           "columnIds": [
             "3a79c498-4e39-4705-a2c7-d5698806c25a"
           ],
-          "x": 459.4792022705078,
-          "y": 940.125,
+          "x": 556.9792022705078,
+          "y": 880.125,
           "direction": "right"
         },
         "constraintName": "fk_billing_to_products_store",
@@ -932,8 +932,8 @@
           "columnIds": [
             "876c2988-0145-4d70-9b6b-1e521541610e"
           ],
-          "x": 753,
-          "y": 508,
+          "x": 1295.5,
+          "y": 515.5,
           "direction": "left"
         },
         "end": {
@@ -941,8 +941,8 @@
           "columnIds": [
             "01cc4827-08d8-4ba2-8986-0b712aca8af2"
           ],
-          "x": 459.4792022705078,
-          "y": 854.375,
+          "x": 556.9792022705078,
+          "y": 794.375,
           "direction": "right"
         },
         "constraintName": "fk_producst-list_to_products_store",
@@ -958,8 +958,8 @@
           "columnIds": [
             "de0380e2-5e3a-47a7-8bde-9dc84b6cec10"
           ],
-          "x": 631.2931365966797,
-          "y": 297.5,
+          "x": 416.8508365966797,
+          "y": 268.9994,
           "direction": "right"
         },
         "end": {
@@ -967,8 +967,8 @@
           "columnIds": [
             "ca6b6526-c17d-45ad-b1f7-904a7fd73cb8"
           ],
-          "x": 753,
-          "y": 412,
+          "x": 1295.5,
+          "y": 419.5,
           "direction": "left"
         },
         "constraintName": "fk_agencyregistration_to_producst-list",
